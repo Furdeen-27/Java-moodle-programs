@@ -1,1 +1,21 @@
-print("hello world")
+import java.util.Scanner;
+public class OddEvenCheck{
+    public static int checkOddOrEven(int number){
+        if (number%2!=0){
+            return 2;
+        }else{
+            return 1;
+        }
+    }
+    public static void main(String[]args){
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println();
+        int inputNumber = scanner.nextInt();
+        
+        int result = checkOddOrEven(inputNumber);
+        System.out.println(+result);
+        
+        scanner.close();
+    }
+}
