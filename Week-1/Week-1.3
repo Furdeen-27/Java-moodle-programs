@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class LastDigitSum{
+    public static void main(String[]args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println();
+        int firstNumber = scanner.nextInt();
+        System.out.println();
+        int secondNumber = scanner.nextInt();
+        int lastDigitFirst = Math.abs(firstNumber % 10);
+        int lastDigitSecond = Math.abs(secondNumber % 10);
+        int sumOfLastDigits = lastDigitFirst + lastDigitSecond;
+        System.out.println(+sumOfLastDigits);
+        
+        scanner.close();
+    }
+}
