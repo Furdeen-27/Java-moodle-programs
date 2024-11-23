@@ -1,0 +1,28 @@
+import java.util.*;
+class prog{
+    public static void main(String[] args){
+        String[] mat={"Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"};
+        Scanner sc=new Scanner (System.in);
+        int n=sc.nextInt();
+        int r;
+        int temp=n,counter=0;
+        while(temp!=0){
+            r=temp%10;
+            temp=temp-r;
+            temp=temp/10;
+            counter++;
+        }
+        String[] pr=new String[counter];
+        int index=0;
+        while(n!=0){
+            r=n%10;
+            pr[counter-index-1]=mat[r];
+            n=n-r;
+            n=n/10;
+            index++;
+        }
+        for(String i:pr){
+            System.out.print(i+" ");
+        }
+    }
+}
