@@ -1,0 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class NthTermSequence{
+    public static List<Integer> generateTerm(int n){
+        List<Integer> sequence =new ArrayList<>();
+        if(n==1){
+            sequence.add(1);
+        }else{
+            List<Integer> prevTerm = generateTerm(n-1);
+            sequence.addAll(prevTerm);
+            sequence.add(n);
+            sequence.addAll(prevTerm);
+        }
+        return sequence;
+    }
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        
+        int n=scanner.nextInt();
+        List<Integer> nthTerm = generateTerm(n);
+        for(int num : nthTerm){
+            System.out.print(num+ " ");
+        }
+        
+    }
+}
