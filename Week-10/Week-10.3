@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main
+{
+    
+    public static void main(String[] args)
+    {
+        Scanner obj=new Scanner(System.in);
+        int n=obj.nextInt();
+        ArrayList<String> list=new ArrayList<>();
+        for(int i=0;i<n;i++)
+        {
+            list.add(obj.next());
+        }
+        System.out.println("List before reversing :"+"\n"+list);
+        Collections.reverse(list);
+        System.out.println("List after reversing :"+"\n"+list);
+        obj.close();
+    }
+}
