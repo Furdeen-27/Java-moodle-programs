@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner obj=new Scanner(System.in);
+        Set<String> h1=new HashSet<>();
+        Set<String> h2=new HashSet<>();
+        int n1=obj.nextInt();
+        for(int i=0;i<n1;i++)
+        {
+            h1.add(obj.next());
+        }
+        int n2=obj.nextInt();
+        for(int i=0;i<n2;i++)
+        {
+            h2.add(obj.next());
+        }
+        
+        h1.retainAll(h2);
+        for(String s:h1)
+        {
+            System.out.println(s);
+        }
+        obj.close();
+    }
+}
