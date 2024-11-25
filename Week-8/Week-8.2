@@ -1,0 +1,53 @@
+import java.util.*;
+class circle{
+    float area;
+    public circle(){
+        this.area=0;
+    }
+    public void calculateArea(float radius){
+        this.area=(float)Math.PI*radius*radius;
+        System.out.print("Area of a circle: ");
+        System.out.format("%.2f",area);
+        System.out.println();
+    }
+}
+class rectangle{
+    float area;
+    public rectangle(){
+        this.area=0;
+    }
+    public void calculateArea(float length,float breadth){
+        this.area=length*breadth;
+        System.out.print("Area of a Rectangle: ");
+        System.out.format("%.2f",area);
+        System.out.println();
+    }
+}
+class Triangle{
+    float area;
+    public Triangle(){
+        this.area=0;
+    }
+    public void calculateArea(float base,float height){
+        this.area=(float)0.5*base*height;
+        System.out.print("Area of a Triangle: ");
+        System.out.format("%.2f",this.area);
+        System.out.println();
+    }
+}
+class prog{
+    public static void main(String [] args){
+        circle c=new circle();
+        rectangle r=new rectangle();
+        Triangle t=new Triangle();
+        Scanner sc = new Scanner(System.in);
+        float ra=sc.nextFloat();
+        float l=sc.nextFloat();
+        float br=sc.nextFloat();
+        float b=sc.nextFloat();
+        float h=sc.nextFloat();
+        c.calculateArea(ra);
+        r.calculateArea(l,br);
+        t.calculateArea(b,h);
+    }
+}
