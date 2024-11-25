@@ -1,0 +1,57 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Arrays;
+public class Main{
+    public static void main(String[] args){
+        
+        Scanner sc = new Scanner(System.in);
+        String[] s1 = sc.nextLine().split(" ");
+        String[] s2 = sc.nextLine().split(" ");
+        ArrayList<Character> ca1 = new ArrayList<>();
+        ArrayList<Character> ca2 = new ArrayList<>();
+        ArrayList<Character> ans = new ArrayList<>();
+        
+        for(String s: s1){
+            ca1.add(s.charAt(0));
+        }
+        for(String s: s2){
+            ca2.add(s.charAt(0));
+        }
+        
+        int m = ca1.size()>ca2.size()? 1: 2;
+        
+        if(m==1){
+            for(int i = 0;i<ca2.size();i++){
+                if(ca1.contains(ca2.get(i)))
+                    ans.add(ca2.get(i));
+            }
+        }
+        else{
+            for(int i = 0;i<ca1.size();i++){
+                if(ca2.contains(ca1.get(i)))
+                    ans.add(ca1.get(i));
+            }
+}
+        
+        int sum = 0;
+        for(char c: ans){
+            sum+= (int)c;
+        }
+        
+        System.out.println(findSuperDigit(sum));
+    }
+    
+    public static int findSuperDigit(int n){
+        if(n/10 == 0){
+            return n;
+        }
+        int sum = 0;
+        int x = n;
+        while(x!=0){
+            sum+=(x%10);
+            x/=10;
+        }
+        n = sum;
+        return(findSuperDigit(n));
+    }
+}
