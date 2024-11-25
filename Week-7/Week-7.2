@@ -1,0 +1,46 @@
+import java .util.*;
+interface Playable{
+    void play();
+}
+class Football implements Playable{
+    String name;
+    public Football(String name){
+        this.name=name;
+    }
+    public void play(){
+        System.out.println(name + " is Playing football");
+    }
+}
+class Basketball implements Playable{
+    String name;
+    public Basketball(String name){
+        this.name=name;
+    }
+    public void play(){
+        System.out.println(name+" is Playing basketball");
+    }
+}
+class Volleyball implements Playable{
+    String name;
+    public Volleyball(String name){
+        this.name=name;
+    }
+    public void play(){
+        System.out.println(name+" is Playing volleyball");
+    }
+}
+public class prog{
+    public static void main(String[] args){
+        String name;
+        Scanner sc=new Scanner(System.in);
+        name=sc.nextLine();
+        Football ob1 =new Football(name);
+        ob1.play();
+        name=sc.nextLine();
+        Volleyball ob2 = new Volleyball(name);
+        ob2.play();
+        name=sc.nextLine();
+        Basketball ob3 = new Basketball(name);
+        ob3.play();
+    }
+}
